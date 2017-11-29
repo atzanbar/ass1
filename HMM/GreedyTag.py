@@ -27,7 +27,7 @@ def main(args):
     if (len(args)<5):
         print("wrong args")
         return
-    greedy_tagger(args[1],args[2],args[3],args[4],args[5])
+    greedy_tagger(args[1],args[2],args[3],args[4])
     #greedy_tagger("ass1-tagger-test-input","q.mle","e.mle","outy.txt","")
 
 if __name__ == "__main__":
