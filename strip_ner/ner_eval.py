@@ -78,7 +78,7 @@ if __name__=='__main__':
 
     prec = len(gold_entities.intersection(pred_entities)) / float(len(pred_entities))
     rec  = len(gold_entities.intersection(pred_entities)) / float(len(gold_entities))
-	f = prec*rec / (prec +rec )
+    f = prec*rec / (prec +rec )
     print "All-types \tPrec:%s Rec:%s f:%s" % (prec, rec, f)
 
     types = set([e[1][1] for e in gold_entities]) - set(["O"])
