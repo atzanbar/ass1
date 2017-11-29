@@ -35,7 +35,7 @@ def compare_accuracy(gold, pred):
         ptags = [t for w,t in pred_sent]
         correct += sum([1 if g==p else 0 for g,p in zip(gold_sent, pred_sent)])
         total += len(gold_sent)
-    return correct/
+    return correct
 
 def get_entities(sent):
     ent=[]
