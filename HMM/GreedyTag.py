@@ -24,9 +24,6 @@ def greedy_tagger(input_file,q_file,e_file,output_file,test_file):
 
 
 def main(args):
-    if (len(args)<5):
-        print("wrong args")
-        return
     greedy_tagger(args[1],args[2],args[3],args[4])
     #greedy_tagger("ass1-tagger-test-input","q.mle","e.mle","outy.txt","")
 
