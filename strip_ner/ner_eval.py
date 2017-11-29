@@ -35,7 +35,7 @@ def compare_accuracy(gold, pred):
         ptags = [t for w,t in pred_sent]
         correct += sum([1 if g==p else 0 for g,p in zip(gold_sent, pred_sent)])
         total += len(gold_sent)
-    return correct/total
+    return correct/
 
 def get_entities(sent):
     ent=[]
@@ -78,7 +78,8 @@ if __name__=='__main__':
 
     prec = len(gold_entities.intersection(pred_entities)) / float(len(pred_entities))
     rec  = len(gold_entities.intersection(pred_entities)) / float(len(gold_entities))
-    print "All-types \tPrec:%s Rec:%s" % (prec, rec)
+	f = prec*rec / (prec +rec )
+    print "All-types \tPrec:%s Rec:%s f:%s" % (prec, rec, f)
 
     types = set([e[1][1] for e in gold_entities]) - set(["O"])
     for t in types:
