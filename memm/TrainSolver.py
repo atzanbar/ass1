@@ -18,9 +18,6 @@ def save_model(out_file,model):
     pickle.dump(model, open(out_file, 'wb'))
 
 def main(args):
-    if (len(args)<3):
-        print("wrong args")
-        return
     model = train_model(args[1])
     save_model(args[2],model)
     # verify_model(args[2])

@@ -120,19 +120,13 @@ def main(args):
     model = pickle.load(open(model_file_name, 'rb'))
     emap,words = load_edict(emap_file_name)
     tagger = MemmViterbiTagger(model,featuremap,tagmap,rev_tagmap,emap,words)
-    #taggedlist = multiTagger(tagger.tag_line,test_x_file_name )
-    run_profiler(multiTagger,tagger.tag_line,test_x_file_name,1)
-    #save_tagged_file(taggedlist,out_file_name)
+    taggedlist = multiTagger(tagger.tag_line,test_x_file_name )
+    #run_profiler(multiTagger,tagger.tag_line,test_x_file_name,1)
+    save_tagged_file(taggedlist,out_file_name)
 
 
 
 if __name__ == "__main__":
-    # main(sys.argv)
+    main(sys.argv)
 
-    test_x_file_name = get_abs_file('..\\data\\ass1-tagger-test-input')
-    model_file_name =get_abs_file('..\\out\\model_file')
-    map_file_name =get_abs_file('..\\out\\e_map')
-    out_file_name = get_abs_file('..\\out\\out_memm1_ner')
-    emap_file_name = 'e_mle'
-    main(['',test_x_file_name,model_file_name,map_file_name,out_file_name,emap_file_name])
-    #validateTest(taggedlist,test_y_file_name)
+

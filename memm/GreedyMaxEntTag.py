@@ -62,9 +62,7 @@ class MemmgreedyTagger:
 
 
 def main(args):
-    if (len(args)<5):
-        print("wrong args")
-        return
+
     test_x_file_name = args[1]
     model_file_name = args[2]
     map_file_name = args[3]
@@ -78,8 +76,6 @@ def main(args):
     taggedlist = multiTagger(tagger.tag_line,test_x_file_name)
     save_tagged_file(taggedlist,out_file_name)
 
-    if (len(args)==6):
-        validateTest(taggedlist,args[5])
 
 if __name__ == "__main__":
     main(sys.argv)
