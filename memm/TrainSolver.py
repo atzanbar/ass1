@@ -1,10 +1,7 @@
 # Save Model Using Pickle
-import pandas
-from sklearn import model_selection
 from sklearn.linear_model import LogisticRegression
 import pickle
 import sys
-import spicy
 from sklearn.datasets import load_svmlight_file
 
 from utilty import get_abs_file
