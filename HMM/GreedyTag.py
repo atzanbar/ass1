@@ -3,7 +3,7 @@ import  sys
 from greedyTagger import GreedyTagger
 
 
-def greedy_tagger(input_file,q_file,e_file,output_file,test_file):
+def greedy_tagger(input_file,q_file,e_file,output_file):
     decoder = Decode(q_file, e_file)
     #tagger = GreedyTagger(qdict,edict,totalWords,wordCount,taglist)
     params = {}
@@ -16,8 +16,6 @@ def greedy_tagger(input_file,q_file,e_file,output_file,test_file):
     qdict,edict,totalWords,wordCount,taglist = decoder.decode()
     tagger  = GreedyTagger(qdict,edict,totalWords,wordCount,taglist ,params)
     taggedlist = multiTagger(tagger.tag_line,input_file )
-    if (test_file !=''):
-        validateTest(taggedlist,test_file)
     save_tagged_file(taggedlist,output_file)
     #run_profiler(multiTagger,tagger.tag_line, inputFileTaged, inputFile)
 
